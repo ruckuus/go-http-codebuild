@@ -1,0 +1,21 @@
+{
+  "family": "ecs-go-http-codebuild",
+  "containerDefinitions": [
+    {
+      "name": "web",
+      "image": "927393638041.dkr.ecr.ap-southeast-1.amazonaws.com/go-http-codebuild:latest",
+      "cpu": 128,
+      "memoryReservation": 128,
+      "portMappings": [
+        {
+          "containerPort": 9090,
+          "protocol": "tcp"
+        }
+      ],
+      "command": [
+        "/app/main"
+      ],
+      "essential": true
+    }
+  ]
+}

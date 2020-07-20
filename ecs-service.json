@@ -1,0 +1,14 @@
+{
+  "cluster": "ecs-base-demo-cluster",
+  "serviceName": "ecs-go-http-codebuild-service",
+  "taskDefinition": "ecs-go-http-codebuild",
+  "loadBalancers": [
+    {
+      "targetGroupArn": "arn:aws:elasticloadbalancing:ap-southeast-1:927393638041:targetgroup/ecs-tg-demo/aba9d9c004a17139",
+      "containerName": "go-http-codebuild",
+      "containerPort": 9090
+    }
+  ],
+  "desiredCount": 1,
+  "role": "ecsServiceRole"
+}
