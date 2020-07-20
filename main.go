@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"net/http"
+	"time"
 )
 
 type Message struct {
@@ -12,8 +13,11 @@ type Message struct {
 
 func handlerHello(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
+
+		ts := time.Now().Format("20060102150405")
+
 		responseObject := Message{
-			Message: "Hello World",
+			Message: "Hello World, current timestamp is: " + ts,
 			Code:    200,
 		}
 
